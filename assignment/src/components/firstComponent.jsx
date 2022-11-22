@@ -5,7 +5,7 @@ class SWAPI extends Component {
   state = {
     pageNumber: 1,
     json: [],
-    data: "",
+    jsonData: [],
     hasPrevious: false,
     hasNext: false,
     has_data: false,
@@ -27,7 +27,16 @@ class SWAPI extends Component {
   };
 
   presentData = (tag) => {
-    this.setState({ data: JSON.stringify(tag) });
+    let temp_data = [];
+    for (let key in tag) {
+      temp_data.push(
+        <tr>
+          <td>{key}</td>
+          <td>{tag[key]}</td>
+        </tr>
+      );
+    }
+    this.setState({ jsonData: temp_data });
   };
 
   refresh = () => {
@@ -69,7 +78,17 @@ class SWAPI extends Component {
         {!this.state.has_data && (
           <button onClick={this.refresh}>getPlayers</button>
         )}
-        <h6>{this.state.data}</h6>
+        <div>
+          <table border="2">
+            <tbody>
+              <tr>
+                <th>KEY</th>
+                <th>VALUE</th>
+              </tr>
+              {this.state.jsonData}
+            </tbody>
+          </table>
+        </div>
       </React.Fragment>
     );
   }
