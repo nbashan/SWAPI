@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { getJsonFile } from "../SWAPI";
+import Header from "./Header";
+import "./buttons.css";
 
 class SWAPI extends Component {
   state = {
@@ -55,28 +57,35 @@ class SWAPI extends Component {
   render() {
     return (
       <React.Fragment>
+        <Header />
         <ul>
           {this.state.json.map((tag) => (
             <li key={tag["name"]}>
-              <button onClick={() => this.presentData(tag)}>
+              <button
+                className="playerName"
+                onClick={() => this.presentData(tag)}
+              >
                 {tag["name"]}
               </button>
             </li>
           ))}
         </ul>
         {this.state.hasPrevious && (
-          <button onClick={() => this.navigate(-1)}>
+          <button className="nextPage" onClick={() => this.navigate(-1)}>
             {this.state.pageNumber - 1}
           </button>
         )}
         {this.state.json && <span>{this.state.pageNumber}</span>}
+
         {this.state.hasNext && (
-          <button onClick={() => this.navigate(1)}>
+          <button className="nextPage" onClick={() => this.navigate(1)}>
             {this.state.pageNumber + 1}
           </button>
         )}
         {!this.state.has_data && (
-          <button onClick={this.refresh}>getPlayers</button>
+          <button className="nextPage" onClick={this.refresh}>
+            getPlayers
+          </button>
         )}
         <div>
           <table border="2">

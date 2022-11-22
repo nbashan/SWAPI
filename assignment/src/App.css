@@ -3,3 +3,15 @@ body {
     color: white;
     font-family: Arial;
   }
+
+h1{
+    color: red;
+}
+
+.card {
+    background-color: white;
+    border-radius: 100px;
+    padding: 10px 300px 30px;
+    margin-top: 50px;
+    margin-left: 20px;
+}
