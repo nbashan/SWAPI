@@ -1,0 +1,15 @@
+.nextPage {
+    background-color: rgb(88, 231, 22);
+    padding: 20px 30px 30px;
+    cursor: pointer;
+    border-radius: 15px;
+    left: 50px;
+}
+
+.playerName{
+    background-color: bisque;
+    cursor: pointer;
+    border-radius: 30px;
+    padding: 10px 30px;
+
+}
