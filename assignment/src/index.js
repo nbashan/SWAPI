@@ -1,5 +1,10 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import { createRoot } from "react-dom/client";
+import SWAPI from './components/firstComponent';
 
-const element = <h1> Hello World </h1>;
-ReactDom.render(element, document.getElementById('root'));
+
+const rootElement = document.getElementById("root");
+const root = createRoot(rootElement);
+
+root.render(<SWAPI/>);
