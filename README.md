@@ -1,1 +1,3 @@
 # SWAPI
+
+![preview](preview.gif)
